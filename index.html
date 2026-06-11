@@ -13,6 +13,7 @@
   --line:rgba(0,0,0,.10); --line2:rgba(0,0,0,.16);
   --safe:#1F7A5A; --warn:#B5790F; --danger:#B23A2E;
   --track:#ECEAE1; --accentbg:#EAF3EE; --nettobg:#F2F0E8;
+  --etsy:#C75A2B; --tpt:#1F7A5A;
   --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --r:12px;
@@ -20,27 +21,24 @@
 @media (prefers-color-scheme:dark){
   :root{--bg:#16161A;--card:#1F1F24;--ink:#ECEBE6;--muted:#9A9A92;
     --line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.2);
-    --track:#2A2A30;--accentbg:#16302A;--nettobg:#23231A;--safe:#4FB58C;--warn:#E0A53A;--danger:#E0695C;}
+    --track:#2A2A30;--accentbg:#16302A;--nettobg:#23231A;--safe:#4FB58C;--warn:#E0A53A;--danger:#E0695C;--etsy:#E0805A;--tpt:#4FB58C;}
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:880px;margin:0 auto;padding:28px 20px 56px}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 64px}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-feature-settings:'tnum'}
 h1{font-size:21px;font-weight:600;margin:0;letter-spacing:-.01em}
 .sub{color:var(--muted);font-size:13px}
-header{margin-bottom:18px}
-.tabs{display:inline-flex;background:var(--track);border-radius:10px;padding:3px;margin-top:14px}
-.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;padding:8px 18px;border-radius:8px;cursor:pointer;font-weight:500}
-.tabs button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
-.qbar{display:flex;align-items:center;gap:10px;margin:16px 0;flex-wrap:wrap}
+header{margin-bottom:16px}
+.qbar{display:flex;align-items:center;gap:10px;margin:14px 0;flex-wrap:wrap}
 .seg{display:inline-flex;background:var(--track);border-radius:10px;padding:3px}
 .seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:6px 14px;border-radius:8px;cursor:pointer;font-weight:500}
 .seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .eyebrow{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.hero{margin-bottom:18px}
+.hero{margin-bottom:14px}
 .heroTop{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
-.big{font-size:34px;font-weight:500;letter-spacing:-.02em}
+.big{font-size:32px;font-weight:500;letter-spacing:-.02em}
 .big small{font-size:15px;color:var(--muted);font-weight:400}
 .pill{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px}
 .meter{position:relative;height:16px;background:var(--track);border-radius:999px;margin:18px 0 8px;overflow:hidden}
@@ -49,31 +47,44 @@ header{margin-bottom:18px}
 .legend{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
 .proj{margin-top:14px;font-size:13px;color:var(--muted)}
 .year-line{margin-top:8px;font-size:13px;color:var(--muted)}
-.netto{background:var(--nettobg);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:18px 20px;border-radius:var(--r);margin-bottom:18px}
+.netto{background:var(--nettobg);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:16px 20px;border-radius:var(--r);margin-bottom:14px}
 .netto .lab{font-size:13px;color:var(--muted)}
-.netto .val{font-size:32px;font-weight:500;letter-spacing:-.02em}
+.netto .val{font-size:26px;font-weight:500}
 .netto .split{font-size:12.5px;color:var(--muted);text-align:right;line-height:1.8}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.big{font-size:28px}.netto .val{font-size:26px}}
-.ph{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-weight:600}
-.ph .cur{margin-left:auto;font-size:12px;color:var(--muted);font-weight:500;background:var(--track);padding:2px 8px;border-radius:6px}
-.row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:9px 0 2px;border-bottom:1px solid var(--line)}
-.row .m{font-size:13px;color:var(--muted)}
-.row input{width:100%;font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink);text-align:right}
-.row input:focus{outline:2px solid var(--safe);outline-offset:0;border-color:transparent}
-.amt{width:92px}.rate{width:72px}
-.kx{font-size:11.5px;color:var(--muted);padding:3px 0 9px;border-bottom:1px solid var(--line)}
-.kx .pln{color:var(--ink)}
-.sub-tot{display:flex;justify-content:space-between;padding-top:12px;font-weight:600}
+.form{margin-bottom:14px}
+.form h2{font-size:15px;font-weight:600;margin:0 0 12px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;align-items:end}
+.f{display:flex;flex-direction:column;gap:4px}
+.f label{font-size:12px;color:var(--muted)}
+.f input,.f select{font:inherit;font-size:14px;padding:8px 9px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink)}
+.f input.num{text-align:right}
+.f input:focus,.f select:focus{outline:2px solid var(--safe);outline-offset:0;border-color:transparent}
+.addbtn{font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border:0;border-radius:8px;background:var(--safe);color:#fff;cursor:pointer;height:38px}
+.addbtn:active{transform:scale(.98)}
+.preview{margin-top:10px;font-size:13px;color:var(--muted)}
+.preview b{color:var(--ink)}
+.entries h2{font-size:15px;font-weight:600;margin:0 0 4px}
+.elist{margin-top:6px}
+.entry{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.entry .d{font-size:13px;color:var(--muted);min-width:74px}
+.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;color:#fff;display:inline-block}
+.b-etsy{background:var(--etsy)}.b-tpt{background:var(--tpt)}.b-inne{background:var(--muted)}
+.entry .vals{font-size:13.5px}
+.entry .vals .nettoLine{color:var(--muted);font-size:12.5px}
+.entry .kxe{color:var(--muted);font-size:11px}
+.del{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;padding:4px 8px;border-radius:6px}
+.del:hover{background:var(--track);color:var(--danger)}
+.empty{color:var(--muted);font-size:14px;padding:16px 0}
 .bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}
 .bar button{font:inherit;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--line2);background:var(--card);color:var(--ink);border-radius:8px;cursor:pointer}
 .bar button:hover{background:var(--track)}
-.bar button:active{transform:scale(.98)}
+.bar .save{background:var(--ink);color:var(--bg);border-color:transparent}
 .status-line{font-size:12px;color:var(--muted)}
 .set{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
-.set input{width:110px;font:inherit;text-align:right;padding:5px 8px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink)}
-.hidden{display:none}
-@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+.set input{width:104px;font:inherit;text-align:right;padding:5px 8px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:13px;font-weight:500;opacity:0;transition:.25s;pointer-events:none}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(prefers-reduced-motion:reduce){.fill,#toast{transition:none}}
 </style>
 </head>
 <body>
@@ -81,156 +92,129 @@ header{margin-bottom:18px}
   <header>
     <h1>Limit działalności nierejestrowanej</h1>
     <div class="sub">rok 2026 · próg przychodu <span class="num" id="limit-label">10 813,50 zł</span> na kwartał</div>
-    <div class="tabs" id="ptabs">
-      <button data-page="brutto" class="on">Brutto · limit</button>
-      <button data-page="netto">Na czysto · netto</button>
-    </div>
   </header>
 
   <div class="qbar"><span class="sub">Kwartał</span><div class="seg" id="qsel"></div></div>
 
-  <div id="view-brutto">
-    <div class="card hero">
-      <div class="eyebrow">Przychód brutto — liczy się do limitu</div>
-      <div class="heroTop">
-        <div class="big num"><span id="total">0,00 zł</span> <small>/ <span id="limit-h" class="num">10 813,50 zł</span></small></div>
-        <span class="pill" id="status">OK</span>
-      </div>
-      <div class="meter"><div class="fill" id="fill"></div><div class="tick" style="left:75%"></div><div class="tick" style="left:90%"></div></div>
-      <div class="legend"><span>0</span><span>75%</span><span>90%</span><span>limit</span></div>
-      <div style="margin-top:12px;font-size:14px">Zostało do limitu: <b class="num" id="left">10 813,50 zł</b></div>
-      <div class="proj" id="proj"></div>
-      <div class="year-line">Rok 2026 brutto łącznie: <b class="num" id="year-brutto">0,00 zł</b></div>
+  <div class="card hero">
+    <div class="eyebrow">Przychód brutto — liczy się do limitu</div>
+    <div class="heroTop">
+      <div class="big num"><span id="total">0,00 zł</span> <small>/ <span id="limit-h" class="num">10 813,50 zł</span></small></div>
+      <span class="pill" id="status">OK</span>
     </div>
-    <div class="grid">
-      <div class="card">
-        <div class="ph">Etsy <span class="cur">EUR</span></div>
-        <div id="rows-brutto-etsy"></div>
-        <div class="sub-tot"><span>Suma w PLN</span><span class="num" id="sum-brutto-etsy">0,00 zł</span></div>
-      </div>
-      <div class="card">
-        <div class="ph">Teachers Pay Teachers <span class="cur">USD</span></div>
-        <div id="rows-brutto-tpt"></div>
-        <div class="sub-tot"><span>Suma w PLN</span><span class="num" id="sum-brutto-tpt">0,00 zł</span></div>
-      </div>
-    </div>
+    <div class="meter"><div class="fill" id="fill"></div><div class="tick" style="left:75%"></div><div class="tick" style="left:90%"></div></div>
+    <div class="legend"><span>0</span><span>75%</span><span>90%</span><span>limit</span></div>
+    <div style="margin-top:12px;font-size:14px">Zostało do limitu: <b class="num" id="left">10 813,50 zł</b></div>
+    <div class="proj" id="proj"></div>
+    <div class="year-line">Rok 2026 brutto łącznie: <b class="num" id="year-brutto">0,00 zł</b></div>
   </div>
 
-  <div id="view-netto" class="hidden">
-    <div class="netto">
-      <div><div class="lab">Na czysto w tym kwartale</div><div class="val num" id="netto-total">0,00 zł</div></div>
-      <div class="split" id="netto-split"></div>
+  <div class="netto">
+    <div><div class="lab">Na czysto w tym kwartale (netto)</div><div class="val num" id="netto-total">0,00 zł</div></div>
+    <div class="split" id="netto-split"></div>
+  </div>
+
+  <div class="card form">
+    <h2>Dodaj przychód</h2>
+    <div class="fgrid">
+      <div class="f"><label for="f-date">Data sprzedaży</label><input type="date" id="f-date"></div>
+      <div class="f"><label for="f-plat">Platforma</label><select id="f-plat"><option value="etsy">Etsy</option><option value="tpt">TPT</option><option value="inne">Inne</option></select></div>
+      <div class="f"><label for="f-cur">Waluta</label><select id="f-cur"><option>EUR</option><option>USD</option><option>PLN</option></select></div>
+      <div class="f"><label for="f-brutto">Brutto</label><input type="number" inputmode="decimal" step="0.01" min="0" class="num" id="f-brutto" placeholder="0,00"></div>
+      <div class="f"><label for="f-netto">Netto (na czysto)</label><input type="number" inputmode="decimal" step="0.01" min="0" class="num" id="f-netto" placeholder="0,00"></div>
+      <div class="f"><label for="f-rate">Kurs PLN</label><input type="number" step="0.0001" min="0" class="num" id="f-rate" placeholder="auto"></div>
+      <div class="f"><button class="addbtn" id="add-btn">Dodaj</button></div>
     </div>
-    <div class="year-line" style="margin:-6px 0 16px">Rok 2026 na czysto łącznie: <b class="num" id="year-netto">0,00 zł</b></div>
-    <div class="grid">
-      <div class="card">
-        <div class="ph">Etsy <span class="cur">EUR</span></div>
-        <div id="rows-netto-etsy"></div>
-        <div class="sub-tot"><span>Na czysto w PLN</span><span class="num" id="sum-netto-etsy">0,00 zł</span></div>
-      </div>
-      <div class="card">
-        <div class="ph">Teachers Pay Teachers <span class="cur">USD</span></div>
-        <div id="rows-netto-tpt"></div>
-        <div class="sub-tot"><span>Na czysto w PLN</span><span class="num" id="sum-netto-tpt">0,00 zł</span></div>
-      </div>
-    </div>
+    <div class="preview" id="preview">Wybierz datę i walutę — kurs NBP dobierze się sam (z dnia poprzedzającego sprzedaż).</div>
+  </div>
+
+  <div class="card entries">
+    <h2>Wpisy w kwartale <span id="q-name" class="num"></span></h2>
+    <div class="elist" id="elist"></div>
   </div>
 
   <div class="bar">
-    <button id="refresh">Odśwież kursy NBP</button>
-    <span class="status-line" id="nbp-status">Kursy: —</span>
+    <button class="save" id="save-btn">Zapisz</button>
+    <button id="export-btn">Eksportuj</button>
+    <button id="import-btn">Importuj</button>
+    <input type="file" id="import-file" accept="application/json,.json" style="display:none">
+    <button id="refresh">Uzupełnij brakujące kursy</button>
+    <span class="status-line" id="nbp-status"></span>
     <span style="flex:1"></span>
     <span class="set">Limit (PLN) <input id="limit-in" class="num" type="number" step="0.01"></span>
   </div>
 </div>
+<div id="toast">Zapisano ✓</div>
 
 <script>
-const LS='limit-niereje-2026-v3';
+const LS='limit-niereje-2026-v4';
 const YEAR=2026;
 const QS=['Q1','Q2','Q3','Q4'];
-const QMON={Q1:[1,2,3],Q2:[4,5,6],Q3:[7,8,9],Q4:[10,11,12]};
-const MNAME=['','Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'];
 const PLN=n=>new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN'}).format(n||0);
 const NF=(n,d)=>new Intl.NumberFormat('pl-PL',{minimumFractionDigits:d,maximumFractionDigits:d}).format(n||0);
 const pad=n=>String(n).padStart(2,'0');
-const PLATS=[['etsy','€','EUR'],['tpt','$','USD']];
+const sym=c=>c==='EUR'?'€':c==='USD'?'$':'zł';
+const platName={etsy:'Etsy',tpt:'TPT',inne:'Inne'};
+const qOf=ds=>'Q'+Math.ceil(+ds.slice(5,7)/3);
+const yOf=ds=>+ds.slice(0,4);
 
 let store=load();
 function load(){
-  try{const s=JSON.parse(localStorage.getItem(LS));if(s&&s.amt&&s.amt.brutto)return s;}catch(e){}
-  const arr=()=>({etsy:[0,0,0],tpt:[0,0,0]});
-  const rt=()=>({etsy:[null,null,null],tpt:[null,null,null]});
-  const s={limit:10813.5,q:'Q2',page:'brutto',amt:{brutto:{},netto:{}},rate:{}};
-  for(const q of QS){s.amt.brutto[q]=arr();s.amt.netto[q]=arr();s.rate[q]=rt();}
-  s.amt.brutto.Q2.etsy[1]=22.97; s.amt.brutto.Q2.tpt[1]=67.67;
-  return s;
+  try{const s=JSON.parse(localStorage.getItem(LS));if(s&&Array.isArray(s.entries))return s;}catch(e){}
+  return {limit:10813.5,q:'Q2',entries:[
+    {id:'ex1',date:'2026-05-15',platform:'etsy',currency:'EUR',brutto:12.00,netto:6.00,rate:null},
+    {id:'ex2',date:'2026-05-02',platform:'tpt',currency:'USD',brutto:3.92,netto:2.50,rate:null}
+  ]};
 }
-function save(){try{localStorage.setItem(LS,JSON.stringify(store));}catch(e){}}
+function save(silent){try{localStorage.setItem(LS,JSON.stringify(store));}catch(e){}if(!silent)toast();}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg||'Zapisano ✓';t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),1600);}
 
 function buildQsel(){
   const el=document.getElementById('qsel');el.innerHTML='';
   QS.forEach(q=>{const b=document.createElement('button');b.textContent=q;b.className=q===store.q?'on':'';
-    b.onclick=()=>{store.q=q;save();buildQsel();renderAll();fetchRates(false);};el.appendChild(b);});
-}
-function setPage(p){
-  store.page=p;save();
-  document.querySelectorAll('#ptabs button').forEach(b=>b.classList.toggle('on',b.dataset.page===p));
-  document.getElementById('view-brutto').classList.toggle('hidden',p!=='brutto');
-  document.getElementById('view-netto').classList.toggle('hidden',p!=='netto');
+    b.onclick=()=>{store.q=q;save(true);buildQsel();renderEntries();recalc();};el.appendChild(b);});
 }
 
-function renderAll(){
-  for(const page of ['brutto','netto']){
-    for(const [plat,sym] of PLATS){
-      const box=document.getElementById(`rows-${page}-${plat}`);box.innerHTML='';
-      QMON[store.q].forEach((mon,i)=>{
-        const amt=store.amt[page][store.q][plat][i]||0;
-        const rate=store.rate[store.q][plat][i];
-        const rv=rate&&rate.mid?rate.mid:'';
-        const row=document.createElement('div');row.className='row';
-        row.innerHTML=
-          `<span class="m">${MNAME[mon]}</span>`+
-          `<input class="amt num" type="number" step="0.01" min="0" placeholder="0,00" value="${amt||''}" data-pg="${page}" data-p="${plat}" data-i="${i}" data-k="amt">`+
-          `<input class="rate num" type="number" step="0.0001" min="0" placeholder="kurs" value="${rv}" data-pg="${page}" data-p="${plat}" data-i="${i}" data-k="rate" title="kurs PLN za 1 ${plat==='etsy'?'EUR':'USD'}">`;
-        const kx=document.createElement('div');kx.className='kx';
-        if(rate&&rate.mid){
-          kx.innerHTML=`${NF(amt,2)} ${sym} × ${NF(rate.mid,4)} = <span class="pln num">${PLN(amt*rate.mid)}</span>`+(rate.date?` · NBP ${rate.date}`:(rate.manual?' · kurs ręczny':''));
-        }else{kx.textContent='kurs: brak — kliknij „Odśwież kursy NBP" lub wpisz ręcznie';}
-        box.appendChild(row);box.appendChild(kx);
-      });
-    }
-  }
-  document.querySelectorAll('input[data-k]').forEach(inp=>{
-    inp.oninput=()=>{
-      const pg=inp.dataset.pg,p=inp.dataset.p,i=+inp.dataset.i,k=inp.dataset.k,v=parseFloat(inp.value);
-      if(k==='amt'){store.amt[pg][store.q][p][i]=isNaN(v)?0:v;}
-      else{store.rate[store.q][p][i]={mid:isNaN(v)?null:v,date:null,manual:true};}
-      save();renderAll();
-    };
+function bruttoPLN(e){return e.currency==='PLN'?(e.brutto||0):(e.rate&&e.rate.mid?(e.brutto||0)*e.rate.mid:0);}
+function nettoPLN(e){return e.currency==='PLN'?(e.netto||0):(e.rate&&e.rate.mid?(e.netto||0)*e.rate.mid:0);}
+function entriesForQ(q){return store.entries.filter(e=>yOf(e.date)===YEAR&&qOf(e.date)===q).sort((a,b)=>b.date.localeCompare(a.date));}
+
+function renderEntries(){
+  document.getElementById('q-name').textContent=store.q;
+  const box=document.getElementById('elist');box.innerHTML='';
+  const list=entriesForQ(store.q);
+  if(!list.length){box.innerHTML='<div class="empty">Brak wpisów w tym kwartale. Dodaj pierwszy powyżej.</div>';return;}
+  list.forEach(e=>{
+    const row=document.createElement('div');row.className='entry';
+    const bPln=bruttoPLN(e),nPln=nettoPLN(e);
+    const cur=sym(e.currency);
+    let kx='';
+    if(e.currency!=='PLN'){kx=e.rate&&e.rate.mid?`kurs NBP ${NF(e.rate.mid,4)} z ${e.rate.date}`:'kurs: brak — kliknij „Uzupełnij brakujące kursy"';}
+    row.innerHTML=
+      `<div class="d num">${e.date.slice(5)}</div>`+
+      `<div><span class="badge b-${e.platform}">${platName[e.platform]}</span>`+
+        `<div class="vals"><span class="num">${NF(e.brutto,2)} ${cur}</span> → <b class="num">${PLN(bPln)}</b>`+
+        (e.netto?`<div class="nettoLine num">na czysto ${NF(e.netto,2)} ${cur} → ${PLN(nPln)}</div>`:'')+
+        `<div class="kxe">${kx}</div></div></div>`+
+      `<button class="del" title="Usuń" data-id="${e.id}">×</button>`;
+    box.appendChild(row);
   });
-  recalc();
+  box.querySelectorAll('.del').forEach(b=>b.onclick=()=>{store.entries=store.entries.filter(x=>x.id!==b.dataset.id);save();renderEntries();recalc();});
 }
-
-function pln(page,q,plat,i){const a=store.amt[page][q][plat][i]||0;const r=store.rate[q][plat][i];return r&&r.mid?a*r.mid:0;}
-function qSum(page,q,plat){let s=0;for(let i=0;i<3;i++)s+=pln(page,q,plat,i);return s;}
-function yearSum(page){let s=0;for(const q of QS)for(const[p]of PLATS)s+=qSum(page,q,p);return s;}
 
 function recalc(){
-  const bE=qSum('brutto',store.q,'etsy'),bT=qSum('brutto',store.q,'tpt'),bTot=bE+bT;
-  const nE=qSum('netto',store.q,'etsy'),nT=qSum('netto',store.q,'tpt'),nTot=nE+nT;
-  const lim=store.limit,pct=lim>0?bTot/lim:0,left=lim-bTot;
+  const list=entriesForQ(store.q);
+  let bE=0,bT=0,b=0,nE=0,nT=0,n=0;
+  list.forEach(e=>{const bp=bruttoPLN(e),np=nettoPLN(e);b+=bp;n+=np;
+    if(e.platform==='etsy'){bE+=bp;nE+=np;}else if(e.platform==='tpt'){bT+=bp;nT+=np;}});
+  let yB=0,yN=0;store.entries.filter(e=>yOf(e.date)===YEAR).forEach(e=>{yB+=bruttoPLN(e);yN+=nettoPLN(e);});
+  const lim=store.limit,pct=lim>0?b/lim:0,left=lim-b;
 
-  document.getElementById('sum-brutto-etsy').textContent=PLN(bE);
-  document.getElementById('sum-brutto-tpt').textContent=PLN(bT);
-  document.getElementById('total').textContent=PLN(bTot);
+  document.getElementById('total').textContent=PLN(b);
   document.getElementById('left').textContent=PLN(Math.max(left,0))+(left<0?` (−${PLN(-left).replace('-','')})`:'');
-  document.getElementById('year-brutto').textContent=PLN(yearSum('brutto'));
-
-  document.getElementById('sum-netto-etsy').textContent=PLN(nE);
-  document.getElementById('sum-netto-tpt').textContent=PLN(nT);
-  document.getElementById('netto-total').textContent=PLN(nTot);
-  document.getElementById('netto-split').innerHTML=`Etsy ${PLN(nE)}<br>TPT ${PLN(nT)}`;
-  document.getElementById('year-netto').textContent=PLN(yearSum('netto'));
+  document.getElementById('year-brutto').textContent=PLN(yB);
+  document.getElementById('netto-total').textContent=PLN(n);
+  document.getElementById('netto-split').innerHTML=`Etsy ${PLN(nE)}<br>TPT ${PLN(nT)}<br><span style="opacity:.7">Rok: ${PLN(yN)}</span>`;
 
   const fill=document.getElementById('fill');fill.style.width=Math.min(pct*100,100)+'%';
   let col=getVar('--safe'),txt='OK',bg=getVar('--accentbg'),fg=getVar('--safe');
@@ -240,56 +224,122 @@ function recalc(){
   fill.style.background=col;
   const st=document.getElementById('status');st.textContent=txt;st.style.color=fg;
   st.style.background=pct>=1?'transparent':bg;st.style.border=pct>=1?'1px solid '+fg:'none';
-
-  const used=[0,1,2].filter(i=>(store.amt.brutto[store.q].etsy[i]||0)>0||(store.amt.brutto[store.q].tpt[i]||0)>0).length;
-  const proj=document.getElementById('proj');
-  if(used>0&&used<3&&bTot>0){const est=bTot/used*3;proj.textContent=`Prognoza brutto na koniec kwartału przy obecnym tempie: ~${PLN(est)} ${est>lim?'— grozi przekroczenie':'— w granicach limitu'}`;}
-  else proj.textContent='';
   document.getElementById('limit-label').textContent=PLN(lim);
   document.getElementById('limit-h').textContent=PLN(lim);
+
+  const proj=document.getElementById('proj');
+  const days=new Set(list.map(e=>e.date));
+  if(b>0){
+    const mon=+(store.q[1])*3; const lastDay=new Date(YEAR,mon,0).getDate();
+    const maxDay=Math.max(...list.map(e=>+e.date.slice(8,10)),1);
+    if(maxDay<lastDay){const est=b/maxDay*lastDay;proj.textContent=`Prognoza brutto na koniec kwartału przy obecnym tempie: ~${PLN(est)} ${est>lim?'— grozi przekroczenie':'— w granicach limitu'}`;}
+    else proj.textContent='';
+  }else proj.textContent='';
 }
 function getVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
 
-async function fetchOne(cur,start,end){
-  const res=await fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${cur}/${start}/${end}/?format=json`);
+async function rateForDate(cur,dateStr){
+  if(cur==='PLN')return{mid:1,date:'—'};
+  const d=new Date(dateStr+'T00:00:00');
+  const end=new Date(d);end.setDate(end.getDate()-1);
+  const start=new Date(d);start.setDate(start.getDate()-8);
+  const fs=`${start.getFullYear()}-${pad(start.getMonth()+1)}-${pad(start.getDate())}`;
+  const fe=`${end.getFullYear()}-${pad(end.getMonth()+1)}-${pad(end.getDate())}`;
+  const res=await fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${cur}/${fs}/${fe}/?format=json`);
   if(!res.ok)throw new Error(res.status);
-  const j=await res.json();const last=j.rates[j.rates.length-1];return{mid:last.mid,date:last.effectiveDate};
+  const j=await res.json();const last=j.rates[j.rates.length-1];
+  return{mid:last.mid,date:last.effectiveDate};
 }
-async function fetchLast(cur){
-  const res=await fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${cur}/last/1/?format=json`);
-  if(!res.ok)throw new Error(res.status);
-  const j=await res.json();const last=j.rates[0];return{mid:last.mid,date:last.effectiveDate};
-}
-async function fetchRates(force){
+
+async function ensureRates(force){
   const status=document.getElementById('nbp-status');
-  const today=new Date();const todayStr=`${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
-  const jobs=[];let needed=0,ok=0,failed=0;
-  for(const[plat,sym,cur]of PLATS){
-    QMON[store.q].forEach((mon,i)=>{
-      const cr=store.rate[store.q][plat][i];
-      if(!force&&cr&&cr.mid)return;
-      if(cr&&cr.manual&&!force)return;
-      const start=`${YEAR}-${pad(mon)}-01`;const lastDay=new Date(YEAR,mon,0);
-      if(new Date(start)>today)return;
-      let end=`${YEAR}-${pad(mon)}-${pad(lastDay.getDate())}`;if(lastDay>today)end=todayStr;
-      needed++;
-      jobs.push(fetchOne(cur,start,end)
-        .then(r=>{store.rate[store.q][plat][i]={mid:r.mid,date:r.date};ok++;})
-        .catch(async()=>{try{const r=await fetchLast(cur);store.rate[store.q][plat][i]={mid:r.mid,date:r.date+' (ost. dostępny)'};ok++;}catch(e){failed++;}}));
-    });
-  }
-  if(needed===0){status.textContent='Kursy: aktualne';return;}
-  status.textContent='Kursy: pobieranie…';
-  await Promise.all(jobs);save();renderAll();
-  status.textContent=failed>0?`Kursy: pobrano ${ok}/${needed} — resztę wpisz ręcznie`:`Kursy NBP: pobrano ${ok}/${needed}`;
+  const todo=store.entries.filter(e=>e.currency!=='PLN'&&(force||!e.rate||!e.rate.mid));
+  if(!todo.length){status.textContent='Kursy: aktualne';return;}
+  status.textContent='Kursy: pobieranie…';let ok=0,fail=0;
+  await Promise.all(todo.map(e=>rateForDate(e.currency,e.date)
+    .then(r=>{e.rate=r;ok++;}).catch(()=>{fail++;})));
+  save(true);renderEntries();recalc();
+  status.textContent=fail?`Kursy: pobrano ${ok}, nie udało się ${fail} — wpisz ręcznie przy dodawaniu`:`Kursy NBP: pobrano ${ok}`;
 }
 
-document.querySelectorAll('#ptabs button').forEach(b=>b.onclick=()=>setPage(b.dataset.page));
-const li=document.getElementById('limit-in');li.value=store.limit;
-li.oninput=e=>{const v=parseFloat(e.target.value);store.limit=isNaN(v)?0:v;save();recalc();};
-document.getElementById('refresh').onclick=()=>fetchRates(true);
+// ---- add form ----
+const F={date:'f-date',plat:'f-plat',cur:'f-cur',brutto:'f-brutto',netto:'f-netto',rate:'f-rate'};
+const g=id=>document.getElementById(id);
+function defaultCur(){const p=g(F.plat).value;return p==='tpt'?'USD':'EUR';}
+async function refreshFormRate(){
+  const date=g(F.date).value,cur=g(F.cur).value,pv=g('preview');
+  if(!date){pv.textContent='Wybierz datę.';return;}
+  if(cur==='PLN'){g(F.rate).value=1;updatePreview();return;}
+  pv.textContent='Pobieram kurs NBP…';
+  try{const r=await rateForDate(cur,date);g(F.rate).value=r.mid;g(F.rate).dataset.date=r.date;updatePreview(r.date);}
+  catch(e){g(F.rate).value='';pv.textContent='Nie udało się pobrać kursu — wpisz go ręcznie w polu „Kurs PLN".';}
+}
+function updatePreview(rateDate){
+  const cur=g(F.cur).value,rate=parseFloat(g(F.rate).value)||0;
+  const b=parseFloat(g(F.brutto).value)||0,n=parseFloat(g(F.netto).value)||0;
+  const bp=cur==='PLN'?b:b*rate,np=cur==='PLN'?n:n*rate;
+  let s=`Brutto = <b>${PLN(bp)}</b>`+(n?` · Na czysto = <b>${PLN(np)}</b>`:'');
+  if(cur!=='PLN'&&rate)s+=` · kurs ${NF(rate,4)}`+(rateDate||g(F.rate).dataset.date?` z ${rateDate||g(F.rate).dataset.date}`:'');
+  g('preview').innerHTML=s;
+}
+function addEntry(){
+  const date=g(F.date).value,plat=g(F.plat).value,cur=g(F.cur).value;
+  const b=parseFloat(g(F.brutto).value),n=parseFloat(g(F.netto).value),rate=parseFloat(g(F.rate).value);
+  if(!date){toast('Podaj datę');return;}
+  if(isNaN(b)&&isNaN(n)){toast('Podaj kwotę');return;}
+  const e={id:'e'+Date.now(),date,platform:plat,currency:cur,brutto:isNaN(b)?0:b,netto:isNaN(n)?0:n,
+    rate:cur==='PLN'?{mid:1,date:'—'}:(!isNaN(rate)?{mid:rate,date:g(F.rate).dataset.date||'ręczny'}:null)};
+  store.entries.push(e);
+  if(qOf(date)!==store.q&&yOf(date)===YEAR){store.q=qOf(date);buildQsel();}
+  save();renderEntries();recalc();
+  g(F.brutto).value='';g(F.netto).value='';
+  if(!e.rate)ensureRates(false);
+  toast('Dodano wpis ✓');
+}
 
-setPage(store.page);buildQsel();renderAll();fetchRates(false);
+g(F.plat).onchange=()=>{g(F.cur).value=defaultCur();refreshFormRate();};
+g(F.date).onchange=refreshFormRate;
+g(F.cur).onchange=refreshFormRate;
+g(F.brutto).oninput=()=>updatePreview();
+g(F.netto).oninput=()=>updatePreview();
+g(F.rate).oninput=()=>updatePreview();
+g('add-btn').onclick=addEntry;
+g('save-btn').onclick=()=>{save();};
+g('refresh').onclick=()=>ensureRates(true);
+const li=g('limit-in');li.value=store.limit;
+li.oninput=e=>{const v=parseFloat(e.target.value);store.limit=isNaN(v)?0:v;save(true);recalc();};
+
+// ---- export / import ----
+function exportData(){
+  const t=new Date();const ds=`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
+  const blob=new Blob([JSON.stringify(store,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=`limit-2026-backup-${ds}.json`;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},100);
+  toast('Wyeksportowano ✓');
+}
+function importData(file){
+  const fr=new FileReader();
+  fr.onload=()=>{
+    let parsed;try{parsed=JSON.parse(fr.result);}catch(e){toast('Niepoprawny plik');return;}
+    if(!parsed||!Array.isArray(parsed.entries)){toast('To nie jest plik z danymi');return;}
+    const ids=new Set(store.entries.map(e=>e.id));let added=0;
+    parsed.entries.forEach(e=>{if(e&&e.id&&!ids.has(e.id)){store.entries.push(e);ids.add(e.id);added++;}});
+    save();renderEntries();recalc();ensureRates(false);
+    toast(added?`Zaimportowano: +${added} wpisów`:'Brak nowych wpisów (już są)');
+  };
+  fr.readAsText(file);
+}
+g('export-btn').onclick=exportData;
+g('import-btn').onclick=()=>g('import-file').click();
+g('import-file').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value='';};
+
+// init
+(function init(){
+  const t=new Date();g(F.date).value=`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
+  g(F.cur).value=defaultCur();
+  buildQsel();renderEntries();recalc();ensureRates(false);refreshFormRate();
+})();
 </script>
 </body>
 </html>
